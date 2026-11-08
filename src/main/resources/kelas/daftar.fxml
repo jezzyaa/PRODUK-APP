@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@styles/app.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kelas.controller.DaftarController">
+    <top>
+        <VBox spacing="12" style="-fx-background-color: BFD3E6;" styleClass="header">
+            <Label styleClass="title" text="Daftar Produk Toko" />
+            <TextField fx:id="cariField" onAction="#cari" promptText="Cari nama produk" />
+            <FlowPane hgap="10" vgap="8">
+                <Button onAction="#cari" text="Cari" />
+                <Button onAction="#resetPencarian" text="Reset" />
+                <Button onAction="#tambah" style="-fx-background-color: #888CBB;" styleClass="button-primary" text="Tambah" />
+                <Button onAction="#detail" text="Lihat Detail" />
+            </FlowPane>
+        </VBox>
+    </top>
+    <bottom>
+        <Label fx:id="pesanLabel" styleClass="error" textFill="#bfd3e6" wrapText="true" />
+    </bottom>
+   <right>
+        <TableView fx:id="tabel" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="kodeCol" prefWidth="100" text="Kode" />
+                <TableColumn fx:id="namaCol" prefWidth="300" text="Nama Produk" />
+                <TableColumn fx:id="kategoriCol" prefWidth="150" text="Kategori" />
+                <TableColumn fx:id="hargaCol" prefWidth="150" text="Harga (Rp)" />
+            </columns>
+        </TableView>
+   </right>
+</BorderPane>
